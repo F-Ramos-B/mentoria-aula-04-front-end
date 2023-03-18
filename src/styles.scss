@@ -2,3 +2,17 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+.frame-conteudo {
+  height: 790px;
+  overflow-y: auto;
+}
+
+.header-footer-coletivo {
+  display: flex;
+  align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
