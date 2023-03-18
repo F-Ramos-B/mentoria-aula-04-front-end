@@ -1,4 +1,4 @@
-<main>
+<main *ngIf="pessoa">
   <div class="d-grid gap-2">
     <button type="button" class="btn btn-block btn-success" routerLink="/">Voltar</button>
   </div>
@@ -6,7 +6,7 @@
   <hr />
   <h1>{{ pessoa.nome }}</h1>
 
-  <small>Apresentou-se em: {{ pessoa.data_apresentacao | date: 'dd/MM/YYYY hh:mm:ss'  }}</small>
+  <small>Apresentou-se em: {{ pessoa.data_apresentacao | date: 'dd/MM/YYYY hh:mm:ss' }}</small>
 
   <div class="m-3 row">
     <label for="id" class="col-sm-1 col-form-label">Id:</label>
@@ -24,7 +24,7 @@
 
   <div class="m-3 row">
     <label for="cidade" class="col-sm-1 col-form-label">Cidade:</label>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
       <input type="text" class="form-control" id="cidade" id="cidade" readonly [value]="pessoa.cidade">
     </div>
   </div>
@@ -57,21 +57,21 @@
     </div>
   </div>
 
-  <div class="m-3 row">
+  <div class="m-3 row" *ngIf="pessoa.link_perfil_linkedin">
     <label for="link_perfil_linkedin" class="col-sm-1 col-form-label">Linkedin:</label>
     <div class="col-sm-6">
       <input type="text" class="form-control" id="link_perfil_linkedin" id="link_perfil_linkedin" readonly [value]="pessoa.link_perfil_linkedin">
     </div>
   </div>
 
-  <div class="m-3 row d-flex align-items-center">
+  <div class="m-3 row d-flex align-items-center" *ngIf="pessoa.porque_esta_aqui">
     <label for="porque_esta_aqui" class="col-sm-1 col-form-label">Porque está aqui:</label>
     <div class="col-sm-11">
       <textarea class="form-control" id="porque_esta_aqui" rows="10" class="form-control" id="porque_esta_aqui" id="porque_esta_aqui" readonly [value]="pessoa.porque_esta_aqui"></textarea>
     </div>
   </div>
 
-  <div class="m-3 row d-flex align-items-center">
+  <div class="m-3 row d-flex align-items-center" *ngIf="pessoa.bio">
     <label for="bio" class="col-sm-1 col-form-label">Bio:</label>
     <div class="col-sm-11">
       <textarea class="form-control" id="bio" id="bio" rows="10" readonly [value]="pessoa.bio"></textarea>
