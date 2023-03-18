@@ -60,7 +60,9 @@
   <div class="m-3 row" *ngIf="pessoa.link_perfil_linkedin">
     <label for="link_perfil_linkedin" class="col-sm-1 col-form-label">Linkedin:</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" id="link_perfil_linkedin" id="link_perfil_linkedin" readonly [value]="pessoa.link_perfil_linkedin">
+      <a [href]="pessoa.link_perfil_linkedin" target="_blank" rel="noopener noreferrer">
+      <input type="text" class="form-control cursor-pointer" id="link_perfil_linkedin" id="link_perfil_linkedin" readonly [value]="pessoa.link_perfil_linkedin">
+    </a>
     </div>
   </div>
 
