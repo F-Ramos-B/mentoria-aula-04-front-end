@@ -10,11 +10,11 @@ export class PessoaService {
   constructor(private http: HttpClient) { }
 
   listarPessoas() {
-    return this.http.get<Pessoa[]>('http://localhost:8080/pessoas');
+    return this.http.get<Pessoa[]>('http://localhost:8080/pessoas/listar');
   }
 
   detalharPessoa(id: number) {
-    return this.http.get<Pessoa>('http://localhost:8080/pessoas/' + id);
+    return this.http.get<Pessoa>('http://localhost:8080/pessoas/detalhar/' + id);
   }
 
 }
